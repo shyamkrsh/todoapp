@@ -10,6 +10,9 @@ function App() {
   const [tasks, setTasks] = useState([]);
   const [isDoneShow, setIsDoneShow] = useState(false);
 
+  useEffect(() => {
+    console.log(tasks);
+  }, [tasks])
 
   return (
     <>
@@ -35,8 +38,7 @@ function App() {
 
           {
             tasks?.map((task, index) => (
-              task.isDone ? "" :
-                <TaskCard key={task?.tasktask_id} task_id={task?.task_id} setTasks={setTasks} content={task?.content} />
+              task.isDone ? "" : <TaskCard key={task?.task_id} task_id={task?.task_id} isDone={task?.isDone} setTasks={setTasks} content={task?.content} />
             ))
           }
         </div>
@@ -47,7 +49,7 @@ function App() {
           </div>
           {
             tasks?.map((task, index) => (
-              task.isDone ? <TaskCard key={task?.tasktask_id} task_id={task?.task_id} isDone={task?.isDone} setTasks={setTasks} content={task?.content} /> : ""
+              task.isDone ? <TaskCard key={task?.task_id} task_id={task?.task_id} isDone={task?.isDone} setTasks={setTasks} content={task?.content} /> : ""
             ))
           }
         </div>
