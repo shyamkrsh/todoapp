@@ -4,7 +4,7 @@ import { MdDeleteOutline } from "react-icons/md";
 
 function TaskCard({ task_id, isDone, setTasks, content }) {
 
-    const [value, setValue] = useState("");
+    const [value, setValue] = useState(content);
 
     useEffect(() => {
         console.log(task_id);
@@ -27,7 +27,7 @@ function TaskCard({ task_id, isDone, setTasks, content }) {
                 task.task_id === id ? { ...task, content: value } : task
             )
         );
-        setValue('');
+        setValue(value);
     }
 
 
