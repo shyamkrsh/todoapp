@@ -23,12 +23,16 @@ function App() {
       {/* here task */}
 
       <div className='h-[60vh] mt-5 overflow-x-hidden overflow-y-scroll relative'>
-        
-        <div className={tasks?.length != 0 ? "hidden" : 'block'}>
+
+        <div className={tasks?.length == 0 ? "block" : 'hidden'}>
           <Empty />
         </div>
 
         <div className={isDoneShow ? 'hidden' : 'block'}>
+          <div className={tasks?.some(task => task.isDone) ? "block" : 'hidden'}>
+            <Empty />
+          </div>
+
           {
             tasks?.map((task, index) => (
               task.isDone ? "" :
@@ -38,6 +42,9 @@ function App() {
         </div>
 
         <div className={isDoneShow ? 'block' : 'hidden'}>
+          <div className={tasks?.some(task => task.isDone) ? "hidden" : 'block'}>
+            <Empty />
+          </div>
           {
             tasks?.map((task, index) => (
               task.isDone ? <TaskCard key={task?.tasktask_id} task_id={task?.task_id} isDone={task?.isDone} setTasks={setTasks} content={task?.content} /> : ""
