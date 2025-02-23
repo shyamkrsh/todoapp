@@ -9,10 +9,6 @@ function App() {
   const [tasks, setTasks] = useState([]);
   const [isDoneShow, setIsDoneShow] = useState(false);
 
-  useEffect(() => {
-    console.log("APp.jsx -", tasks);
-  }, [tasks])
-
   return (
     <>
       <Navbar />
