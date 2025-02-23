@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import Navbar from './Components/Navbar'
+import Navbar from './Components/layout/Navbar'
 import AddTasks from './Components/AddTasks'
 import TaskCard from './Components/TaskCard'
 import Empty from './Components/Empty'
