@@ -3,11 +3,13 @@ import './App.css'
 import Navbar from './Components/Navbar'
 import AddTasks from './Components/AddTasks'
 import TaskCard from './Components/TaskCard'
+import Empty from './Components/Empty'
 
 function App() {
 
   const [tasks, setTasks] = useState([]);
   const [isDoneShow, setIsDoneShow] = useState(false);
+
 
   return (
     <>
@@ -21,6 +23,11 @@ function App() {
       {/* here task */}
 
       <div className='h-[60vh] mt-5 overflow-x-hidden overflow-y-scroll relative'>
+        
+        <div className={tasks?.length != 0 ? "hidden" : 'block'}>
+          <Empty />
+        </div>
+
         <div className={isDoneShow ? 'hidden' : 'block'}>
           {
             tasks?.map((task, index) => (
@@ -38,6 +45,7 @@ function App() {
           }
         </div>
       </div>
+
     </>
   )
 }

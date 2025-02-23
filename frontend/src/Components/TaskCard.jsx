@@ -30,9 +30,8 @@ function TaskCard({ task_id, isDone, setTasks, content }) {
         setValue(value);
     }
 
-
     return (
-        <div className='flex items-center justify-center gap-5 md:gap-10 mt-5 w-[90%] md:w-[75%] shadow-lg mx-auto rounded-md p-2 border'>
+        <div className='flex items-center justify-center gap-5 md:gap-10 mt-5 w-[90%] md:w-[75%] shadow-lg mx-auto rounded-md py-2 border'>
             <div>
                 <input type="checkbox" checked={isDone ? true : false} className="checkbox checkbox-md" onClick={() => handleTaskDone(task_id)} />
             </div>
