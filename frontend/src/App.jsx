@@ -10,10 +10,6 @@ function App() {
   const [tasks, setTasks] = useState([]);
   const [isDoneShow, setIsDoneShow] = useState(false);
 
-  useEffect(() => {
-    console.log(tasks);
-  }, [tasks])
-
   return (
     <>
       <Navbar />
@@ -26,7 +22,6 @@ function App() {
       {/* here task */}
 
       <div className='h-[60vh] mt-5 overflow-x-hidden overflow-y-scroll relative'>
-
 
         <div className={isDoneShow ? 'hidden' : 'block'}>
           <div className={tasks?.some(task => !task.isDone) ? "hidden" : 'block'}>
@@ -41,7 +36,7 @@ function App() {
         </div>
 
         <div className={isDoneShow ? 'block' : 'hidden'}>
-          <div className={tasks?.some(task => task.isDone) ? "hidden" : tasks?.length == 0 ? 'hidden': 'block'}>
+          <div className={tasks?.some(task => task.isDone) ? "hidden" : tasks?.length == 0 ? 'hidden' : 'block'}>
             <Empty />
           </div>
           {
