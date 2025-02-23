@@ -20,7 +20,7 @@ function App() {
 
       {/* here task */}
 
-      <div className='h-[60vh] mt-5 overflow-x-hidden overflow-y-scroll'>
+      <div className='h-[60vh] mt-5 overflow-x-hidden overflow-y-scroll relative'>
         <div className={isDoneShow ? 'hidden' : 'block'}>
           {
             tasks?.map((task, index) => (
@@ -37,13 +37,6 @@ function App() {
             ))
           }
         </div>
-        {
-          tasks?.length == 0 ?
-            <div className=''>
-              <h1 className='text-center font-semibold text-2xl'>No Such Tasks Available</h1>
-            </div>
-            : ""
-        }
       </div>
     </>
   )
