@@ -36,7 +36,7 @@ function App() {
         </div>
 
         <div className={isDoneShow ? 'block' : 'hidden'}>
-          <div className={tasks?.some(task => task.isDone) ? "hidden" : tasks?.length == 0 ? 'hidden' : 'block'}>
+          <div className={tasks?.some(task => task.isDone) ? "hidden" : 'block'}>
             <Empty />
           </div>
           {

@@ -7,7 +7,6 @@ function TaskCard({ task_id, isDone, setTasks, content }) {
     const [value, setValue] = useState(content);
 
     let handleTaskDelete = (id) => {
-        console.log("After Clicked - ", id)
         setTasks((prevTasks) => prevTasks.filter(task => task.task_id !== id));
     };
     let handleTaskDone = (id) => {
